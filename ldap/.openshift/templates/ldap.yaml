@@ -28,7 +28,7 @@ objects:
       changetype: add
       objectClass: organizationalUnit
       objectClass: top
-      ou: users
+      ou: Users
 
       dn: uid=john,ou=users,dc=redhat,dc=com
       changetype: add
@@ -56,14 +56,16 @@ objects:
         name: ${APPLICATION_NAME}:latest
     runPolicy: Serial
     source:
-      contextDir: example/extend-osixia-openldap
+      contextDir: ldap
       git:
-        ref: stable
-        uri: 'https://github.com/jtlnguyen/docker-openldap'
+        ref: v2-dev
+        uri: 'https://github.com/jtlnguyen/ninja-board'
       type: Git
     strategy:
       dockerStrategy: {}
       type: Docker
+    triggers:
+      - type: ConfigChange
 - apiVersion: v1
   kind: DeploymentConfig
   metadata:
