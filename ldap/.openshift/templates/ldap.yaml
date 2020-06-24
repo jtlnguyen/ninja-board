@@ -43,6 +43,12 @@ objects:
       mail: jhon.admin@example.com
       rhatGeo: Central
 - apiVersion: v1
+  kind: ServiceAccount
+  metadata:
+    name: ${APPLICATION_NAME}
+    labels:
+      application: ${APPLICATION_NAME}
+- apiVersion: v1
   kind: BuildConfig
   metadata:
     name: ${APPLICATION_NAME}
@@ -56,10 +62,10 @@ objects:
         name: ${APPLICATION_NAME}:latest
     runPolicy: Serial
     source:
-      contextDir: ldap
+      contextDir: ${SOURCE_REPOSITORY_DIR}
       git:
-        ref: v2-dev
-        uri: 'https://github.com/jtlnguyen/ninja-board'
+        ref: ${SOURCE_REPOSITORY_REF}
+        uri: ${SOURCE_REPOSITORY_URL}
       type: Git
     strategy:
       dockerStrategy: {}
@@ -237,7 +243,17 @@ parameters:
     description: The name for the application.
     required: true
     value: ldap
-  - name: NAMESPACE
-    description: Project Namespace
+  - name: SOURCE_REPOSITORY_URL
+    description: The source URL for the application
+    displayName: Source URL
+    value: https://github.com/redhat-cop/ninja-board
     required: true
-    value: ninja-board-v2
+  - name: SOURCE_REPOSITORY_REF
+    description: The branch name for the application
+    displayName: Source Branch
+    value: v2
+    required: true
+  - name: SOURCE_REPOSITORY_DIR
+    description: The location within the source repo of the application
+    displayName: Source Directory
+    value: ldap
