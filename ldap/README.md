@@ -4,6 +4,7 @@ An OpenLDAP image based on [osixia/openldap](https://hub.docker.com/r/osixia/ope
 Documentation of the base image can be found at https://github.com/osixia/docker-openldap.
 
 ### Deploying on OpenShift
+<<<<<<< HEAD
 Inside the *ldap* subdirectory:
 
 The OpenLDAP image needs to run as root to deploy successfully. You can grant a `serviceaccount` access to `scc/anyuid` by processing the *rbac.yaml* template.
