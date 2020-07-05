@@ -20,7 +20,7 @@ pipeline {
     stage('Build Application'){
       steps {
         sh """
-          cd ninja-react
+          cd react/ninja-react
           npm install
           npm run build
         """
