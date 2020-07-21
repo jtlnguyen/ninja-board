@@ -116,11 +116,11 @@ Once complete, all of the v1 resources should be available in OpenShift
 
 ### OpenShift v2 Deployment
 
-##### Prerequisites
+#### Prerequisites
 
 The same prerequisites from the v1 prereqs.
 
-##### Login to OpenShift
+#### Login to OpenShift
 
 Login to OpenShift
 
@@ -128,7 +128,7 @@ Login to OpenShift
 oc login <openshift url>
 ```
 
-##### Deployment
+#### Deployment
 
 Utilize the following steps to deploy the project
 
