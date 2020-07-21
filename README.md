@@ -39,6 +39,18 @@ mvn clean package -DskipTests jetty:run -Djetty.port=8082
 
 ## Deployment on Openshift
 
+### Deployment Using the OpenShift Applier
+
+The project can be deployed using the [openshift-applier](https://github.com/redhat-cop/openshift-applier).
+
+#### Prerequisites
+
+The following prerequisites must be satisfied:
+
+1. [Ansible](https://www.ansible.com/)
+2. OpenShift Command Line Interface (CLI)
+3. OpenShift environment
+
 ### OpenShift v1 Deployment
 
 #### Setting up the deployment config files
@@ -54,7 +66,6 @@ trello_api_token=<your token>
 
 Alternatively, you can target each of the environments for deployment by prepending `dev_` or `prod_` before each variable.s
 
-
 #### Getting your google drive credentials.json file
 ```
 mkdir gdrive_temp
@@ -67,20 +78,7 @@ chmod +x drive_linux
 This will output a url you need to visit and sign in, which will return an auth code to enter in the console.
 After you've entered the auto code, the credentials are stored in *gdrive_temp/.gd/credentials.json*.
 
-
-#### Deployment Using the OpenShift Applier
-
-The project can be deployed using the [openshift-applier](https://github.com/redhat-cop/openshift-applier).
-
-##### Prerequisites
-
-The following prerequisites must be satisfied:
-
-1. [Ansible](https://www.ansible.com/)
-2. OpenShift Command Line Interface (CLI)
-3. OpenShift environment
-
-##### Login to OpenShift
+#### Login to OpenShift
 
 Login to OpenShift
 
@@ -88,7 +86,7 @@ Login to OpenShift
 oc login <openshift url>
 ```
 
-##### Deployment
+#### Deployment
 
 Utilize the following steps to deploy the project
 
@@ -115,10 +113,6 @@ Utilize the following steps to deploy the project
 Once complete, all of the v1 resources should be available in OpenShift
 
 ### OpenShift v2 Deployment
-
-#### Prerequisites
-
-The same prerequisites from the v1 prereqs.
 
 #### Login to OpenShift
 
