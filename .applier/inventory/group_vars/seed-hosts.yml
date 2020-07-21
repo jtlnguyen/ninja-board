@@ -9,6 +9,7 @@ openshift_cluster_content:
         tags:
           - projects-{{ ninja_board_dev_namespace }}
           - projects
+          - project-req-dev
       - name: ninja-board-project
         template: "{{ inventory_dir }}/../../.openshift/projects/project.yml"
         action: create
@@ -113,6 +114,7 @@ openshift_cluster_content:
         tags:
           - projects-{{ ninja_board_dev_namespace }}
           - user-management-back-end
+          - v2
   - object: front-end
     content:
       - name: "front-end"
@@ -126,3 +128,4 @@ openshift_cluster_content:
         tags:
           - projects-{{ ninja_board_dev_namespace }}
           - front-end
+          - v2
