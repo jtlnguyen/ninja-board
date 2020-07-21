@@ -153,8 +153,8 @@ Utilize the following steps to deploy the project
     ansible-playbook -i .applier/inventory galaxy/openshift-applier/playbooks/openshift-cluster-seed.yml -e="@.openshift/params/ninja-board-deployment -e include_tags=v2"
     ```
 
-    **NOTES**
+    ***NOTES***
     * If you have not yet created the openshift dev project, you will need to change the `include_tags` argument to `include_tags=project-req-dev,v2`
-    * If you are not behind RedHat Network and would like access to services that use ldap, you will need to change the `include_tags` argument to `include_tags=ldap-rbac,ldap,v2`. This will **FAIL** if you do not have sufficient priveleges. If you don't have access to perform this, ask a cluster administrator.
+    * If you are not behind RedHat Network and would like access to services that use ldap, you will need to change the `include_tags` argument to `include_tags=ldap-rbac,ldap,v2`. This will ***FAIL*** if you do not have sufficient priveleges. If you don't have access to perform this, ask a cluster administrator.
 
 Once complete, all of the v2 resources should be available in OpenShift
